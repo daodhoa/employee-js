@@ -9,10 +9,11 @@ class Employees extends React.Component {
     }
 
     render() {
-        const { employees } = this.props;
+        const { loading, employees } = this.props;
         return (
             <div className="container">
                 <h3>All Employees</h3>
+                {loading && <p>In Loading</p>}
                 <div className="row">
                     <table className="table">
                         <thead>
@@ -24,13 +25,13 @@ class Employees extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            { employees.map(employee => 
+                            {employees.map(employee =>
                                 <tr key={employee.id}>
                                     <td>{employee.id}</td>
                                     <td>{employee.employee_name}</td>
                                     <td>{employee.employee_salary}</td>
                                     <td>{employee.employee_age}</td>
-                                </tr>   
+                                </tr>
                             )}
                         </tbody>
                     </table>
@@ -41,7 +42,8 @@ class Employees extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    employees: state.employees
+    employees: state.employees,
+    loading: state.loading
 });
 
 const mapDispatchToProps = dispatch => ({

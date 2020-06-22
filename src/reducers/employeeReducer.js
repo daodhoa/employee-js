@@ -1,7 +1,7 @@
 import { LOAD_EMPLOYEE_START, LOAD_EMPLOYEE_ERROR, LOAD_EMPLOYEE_SUCCESS } from "../actions/actionTypes";
 
 const initState = {
-    loading: false,
+    loading: true,
     employees: [],
     error: false
 };
