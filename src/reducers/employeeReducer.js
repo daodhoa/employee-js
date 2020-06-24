@@ -1,4 +1,5 @@
-import { LOAD_EMPLOYEE_START, LOAD_EMPLOYEE_ERROR, LOAD_EMPLOYEE_SUCCESS } from "../actions/actionTypes";
+import { LOAD_EMPLOYEES_START, LOAD_EMPLOYEES_SUCCESS, LOAD_EMPLOYEES_ERROR } from "../actionType/employees";
+
 
 const initState = {
     loading: true,
@@ -8,18 +9,18 @@ const initState = {
 
 export const employeesReducer = (state = initState, action) => {
     switch (action.type) {
-        case LOAD_EMPLOYEE_START:
+        case LOAD_EMPLOYEES_START:
             return {
                 ...state,
                 loading: true
             };
-        case LOAD_EMPLOYEE_ERROR:
+        case LOAD_EMPLOYEES_ERROR:
             return {
                 ...state,
                 loading: false,
                 error: true
             };
-        case LOAD_EMPLOYEE_SUCCESS:
+        case LOAD_EMPLOYEES_SUCCESS:
             return {
                 ...state,
                 loading: false,

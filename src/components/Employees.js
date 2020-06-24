@@ -1,5 +1,5 @@
 import React from 'react';
-import { loadEmployees } from '../thunk/employee';
+import { loadEmployees } from '../thunk/employees';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -44,8 +44,8 @@ class Employees extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    employees: state.employees,
-    loading: state.loading
+    employees: state.employeesReducer.employees,
+    loading: state.employeesReducer.loading
 });
 
 const mapDispatchToProps = dispatch => ({
