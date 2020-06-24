@@ -4,14 +4,16 @@ import Navbar from './components/Navbar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Employees from './components/Employees';
+import Employee from './components/Employee';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route path='/employees' component={Employees} />
-        <Route path='/' component={Home}/>
+        <Route exact path='/employees' component={Employees} />
+        <Route exact path='/employees/:id' component={Employee} />
+        <Route exact path='/' component={Home}/>
       </Switch>
     </BrowserRouter>
   );

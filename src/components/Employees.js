@@ -1,10 +1,10 @@
 import React from 'react';
 import { loadEmployees } from '../thunk/employee';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Employees extends React.Component {
     componentDidMount() {
-        console.log('Employee mount');
         this.props.loadEmployees();
     }
 
@@ -22,6 +22,7 @@ class Employees extends React.Component {
                                 <th scope="col">Name</th>
                                 <th scope="col">Salary</th>
                                 <th scope="col">Age</th>
+                                <th scope="cole">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,7 @@ class Employees extends React.Component {
                                     <td>{employee.employee_name}</td>
                                     <td>{employee.employee_salary}</td>
                                     <td>{employee.employee_age}</td>
+                                    <td><Link to={`employees/${employee.id}`}>Detail</Link></td>
                                 </tr>
                             )}
                         </tbody>

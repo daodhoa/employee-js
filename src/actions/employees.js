@@ -1,14 +1,14 @@
-import { LOAD_EMPLOYEE_START, LOAD_EMPLOYEE_SUCCESS, LOAD_EMPLOYEE_ERROR } from "./actionTypes"
+import { LOAD_EMPLOYEES_START, LOAD_EMPLOYEES_SUCCESS, LOAD_EMPLOYEES_ERROR } from "../actionType/employees"
 
 export const loadEmployeesStart = () => ({
-    type: LOAD_EMPLOYEE_START
+    type: LOAD_EMPLOYEES_START
 });
 
 export const loadEmployeesSuccess = (employees) => ({
-    type: LOAD_EMPLOYEE_SUCCESS,
+    type: LOAD_EMPLOYEES_SUCCESS,
     employees
 });
 
 export const loadEmployeesError = () => ({
-    type: LOAD_EMPLOYEE_ERROR
+    type: LOAD_EMPLOYEES_ERROR
 });
